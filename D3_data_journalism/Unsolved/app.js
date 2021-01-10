@@ -22,7 +22,7 @@ var chartGroup = svg.append("g")
   .attr("transform", `translate(${margin.left}, ${margin.top})`);
 
 // Import Data
-d3.csv("assets/data/data.csv").then(function(journalismData) {
+d3.csv("data.csv").then(function(journalismData) {
 
     // Step 1: Parse Data/Cast as numbers
     // ==============================
@@ -79,7 +79,7 @@ d3.csv("assets/data/data.csv").then(function(journalismData) {
   // ========================================================
   circlesGroup.on("mouseover", function(d, i) {
     toolTip.style("display", "block");
-    toolTip.html(`<strong> ${d.state} <strong><br><strong> Hair lenght: ${d.healthcare}<strong><br> number of hits: ${d.poverty}
+    toolTip.html(`<strong> ${d.state} <strong><br><strong> healthcare: ${d.healthcare}<strong><br> % povrty: ${d.poverty}
     `)
       .style("left", d3.event.pageX + "px")
       .style("top", d3.event.pageY + "px");
