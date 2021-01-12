@@ -1,6 +1,6 @@
 // @TODO: YOUR CODE HERE!
-var svgWidth = 960;
-var svgHeight = 500;
+var svgWidth = 1600;
+var svgHeight = 700;
 
 var margin = {
   top: 20,
@@ -37,10 +37,10 @@ d3.csv("data.csv").then(function(journalismData) {
     // create scales
     var xTimeScale = d3.scaleTime()
       .domain(d3.extent(journalismData, d => d.healthcare))
-      .range([0, width]);
+      .range([5, width]);
 
     var yLinearScale = d3.scaleLinear()
-      .domain([0, d3.max(journalismData, d => d.poverty)])
+      .domain([7, d3.max(journalismData, d => d.poverty)])
       .range([height, 0]);
 
     // create axes
@@ -66,8 +66,8 @@ d3.csv("data.csv").then(function(journalismData) {
     .append("circle")
     .attr("cx", d => xTimeScale(d.healthcare))
     .attr("cy", d => yLinearScale(d.poverty))
-    .attr("r", "10")
-    .attr("fill", "gold")
+    .attr("r", "15")
+    .attr("fill", "blue")
     .attr("stroke-width", "1")
     .attr("stroke", "black");
     // Step 6: Initialize tool tip
