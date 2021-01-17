@@ -33,7 +33,7 @@ d3.csv("assets/data/data.csv")
     var yLinearScale = d3.scaleLinear()
       .domain([0, d3.max(newsdata, d => d.healthcare*1.2)])
       .range([height, 0]);
-    // Step 3: reate axis functions
+    // Step 3: Create axis functions
     // ==============================
     var bottomAxis = d3.axisBottom(xLinearScale);
     var leftAxis = d3.axisLeft(yLinearScale);
