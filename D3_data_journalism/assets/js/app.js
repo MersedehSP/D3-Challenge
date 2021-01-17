@@ -89,17 +89,7 @@ d3.csv("assets/data/data.csv")
   // Step 7: Create tooltip in the chart
   // ==============================
   chartGroup.call(toolTip);
-   // Step 8: Create event listeners to display and hide the tooltip
-   // ==============================
-    // circlesGroup.on("click", function(data) {
-    //   toolTip.show(data, this)
-    // })
-    //   // onmouseout event
-    //   .on("mouseout", function(data, index) {
-    //     toolTip.hide(data,this)
-    //     d3.select(this).style("stroke","#e3e3e3")
-    //   });
-    // Create axes labels
+
     chartGroup.append("text")
       .attr("transform", "rotate(-90)")
       .attr("y", 0 - margin.left + 40)
