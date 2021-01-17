@@ -23,7 +23,7 @@ d3.csv("assets/data/data.csv")
     newsdata.forEach(function(data) {
       data.poverty = +data.poverty;
       data.healthcare = +data.healthcare;
-      console.log(data.poverty);
+      //console.log(data.poverty);
     });
     // Step 2: Create scale functions
     // ==============================
@@ -44,7 +44,7 @@ d3.csv("assets/data/data.csv")
       .call(bottomAxis);
     chartGroup.append("g")
       .call(leftAxis);
-    // Step 5: Create Circles
+    // Step 5: Create Circles (two parts: 1- append the circles based on the data 2- append the text inside the circles)
     // ==============================
     var circlesGroup = chartGroup.selectAll("circle").data(newsdata).enter();
     circlesGroup.append("circle")
@@ -83,7 +83,7 @@ d3.csv("assets/data/data.csv")
     .attr("class", "d3-tip")
     .offset([80, -20])
     .html(function(d) {
-      return (`${d.state}<br>poverty: ${d.poverty}<br>healthcare: ${d.healthcare}`);
+      return (`${d.state}<br>Poverty: ${d.poverty}<br>Healthcare: ${d.healthcare}`);
     });
     
   // Step 7: Create tooltip in the chart
